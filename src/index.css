@@ -1,0 +1,129 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #EEF4F0;
+  color: #13261E;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: #B8D8C6;
+  color: #13261E;
+}
+
+.section-container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  box-shadow:
+    0 10px 40px rgba(31, 58, 44, 0.06),
+    inset 0 1px rgba(255,255,255,0.7);
+}
+
+.premium-shadow {
+  box-shadow:
+    0 10px 30px rgba(34, 58, 46, 0.08),
+    0 30px 80px rgba(34, 58, 46, 0.08);
+}
+
+.hero-gradient {
+  background:
+    radial-gradient(circle at top left, rgba(136, 193, 160, 0.18), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(101, 166, 132, 0.12), transparent 30%);
+}
+
+.grid-overlay {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+
+.card-hover {
+  transition:
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.45s ease,
+    border-color 0.45s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-10px);
+  box-shadow:
+    0 20px 60px rgba(34, 58, 46, 0.12),
+    0 40px 120px rgba(34, 58, 46, 0.08);
+}
+
+.fade-up {
+  animation: fadeUp 1s ease forwards;
+}
+
+.float-animation {
+  animation: floating 6s ease-in-out infinite;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-14px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+button {
+  transition: all 0.35s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1024px) {
+  .section-container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .section-container {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+}
